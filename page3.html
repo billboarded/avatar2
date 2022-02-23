@@ -15,8 +15,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="project2.css" type="text/css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  </head>
 
+  </head>
+  <script src="project.js"></script>
+  <script src="https://www.w3schools.com/lib/w3.js"></script>
+  <script>
+  function hideButton(x)
+   {
+    x.style.display = 'none';
+   }
+  </script>
 
   <body>
     <nav class="navbar navbar-expand-lg  navbar-dark bg-primary  ">
@@ -28,7 +36,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active " aria-current="page" href="page1.html" >PLOT</a>
+          <a class="nav-link active " aria-current="page" href="page1.html"  >PLOT</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active"  href="page2.html" >DIRECTOR</a>
@@ -52,7 +60,7 @@
   <div class="row">
     <div class="col-lg-4">
       <img src="details.png"
-      width="300" height="450" class="img-fluid scale rounded mx-auto d-block" alt="...">
+      width="300" height="450" class="rounded mx-auto d-block" onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0"  alt="details" >
   </div>
     <div class="col-lg-8"><h1 class="title" ><i class="fas fa-paperclip"></i> DETAILS</h1>
     <p class="h3">About Movie</p>
@@ -64,12 +72,55 @@
       <li>For the filming of the film, Cameron rented the <abbr title="Manhattan Beach Studios">MBS</abbr> Media Campus set in Southern California for a period of 5 years. Characteristic features of this site are an "aggressive" water conservation program, the use of environmentally friendly cleaning products and paints, as well as a number of other "green" programs. Cameron intends to install solar panels in the studio and shoot both films using solar energy. The cost of installing the appropriate equipment will cost the director &euro; 4.4 million.</li>
       <li>In March 2012, aboard the Deepsea Challenger submersible, James Cameron dived to the bottom of the Mariana Trench to seek inspiration for Pandora's ocean floor and a 3D documentary about the Pacific Trench. Thus, Cameron became the third person in history to undertake such an expedition.</li>
       <li>As James Cameron once stated, writing the sequel to Avatar (2009) was so laborious that he split it between a whole team of writers that included Rick Jaffa and his wife Amanda Silver, Josh Friedman and Shane Salerno.<br>
+      <li><p>
+        Left before the movie premiere: <p id="timeleft"></p>
 
+  <script>
 
+  var countDownDate = new Date("Dec 14, 2022 00:00:00").getTime();{
+
+  }
+
+  var x = setInterval(function() {
+
+    var now = new Date().getTime();
+
+    var distance = countDownDate - now;
+
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("timeleft").innerHTML = days + "days " + hours + "hours "
+    + minutes + "minutes " + seconds + "seconds ";
+
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("timeleft").innerHTML = "it's already in the cinemas";
+    }
+  }, 1000);
+  </script></p>
+
+</li>
+  <li class="fact">James Cameron is known for his love of technology. He seems to always be looking for new ways to use the newest techniques to do something unique in his movies. His use of 3D in Avatar is one of the main reasons that the technology is still used today and his work on motion capture, especially with faces, was a big part of what Cameron used to sell Avatar to both the studio and the public.
+
+But that was 2009, what has James Cameron been up to lately? Avatar producer Jon Landau has spoken with a man named Douglas Trumbull about a new film process that combines 4K resolution, 3D and high frame rates (up to 120 per second) into one package. This sounds like a match made in heaven for James Cameron. He's a big proponent of both 3D and HFR so it would be far from surprising if this tech was adopted for this, or future Avatar sequels.
+
+Because 3D essentially requires two frames in order to create it, getting 3D and a high frame rate at the same time is difficult, add in four thousand lines of resolution and the math gets even more complicated. All these things together, however, could bring Pandora to life like never before.
+
+Speaking of 3D technology, it's possible that the most challenging aspect of these new films will be Cameron's desire to use a 3D process that, wait for it, doesn't require the audience to wear special glasses while watching the movies. That technology is currently available, but the difficulty lies in utilizing it on a large screen meant for more than one viewer, and with people sitting at a wide variety of angles and distances from that screen.
+
+In theory, scaling up a glasses-free 3D image should be possible, but it hasn't been done at this point, and the cost of the process isn't commercially viable yet. Of course, with all the delays that have already occurred with the Avatar sequels, it's not impossible that James Cameron's films could be delayed long enough for production and the tech to catch up to one another.
+
+<br><button class="btn btn-primary btn-lg"onclick="w3.hide('.fact') " >Hide info</button></li>
+<li>
+Despite the fact that the film has not yet been released, we already have the opportunity to get acquainted with one of the main musical themes<br>
+    <button class="btn btn-primary btn-lg" onclick="playsound()">Listen</button>
+
+</li>
 
       </ol>
-
-
 
 </p></div>
   </div>
